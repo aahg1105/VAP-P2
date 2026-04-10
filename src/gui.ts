@@ -222,7 +222,9 @@ export function initGUI(onShapeChange: (shape: "cube" | "sphere") => void) {
       if(!file) return;
       console.log(file);
 
-      const event = new CustomEvent('textureLoaded',{detail: file.name});
+      const tempURL = URL.createObjectURL(file);
+
+      const event = new CustomEvent('textureLoaded',{detail: tempURL});
       window.dispatchEvent(event);
   });
 
