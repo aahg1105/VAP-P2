@@ -179,7 +179,7 @@ function buildVertexBuffer(shape: "cube" | "sphere"): { buf: GPUBuffer; count: n
     size: data.byteLength,
     usage: GPUBufferUsage.VERTEX | GPUBufferUsage.COPY_DST,
   });
-  device.queue.writeBuffer(buf, 0, data);
+  device.queue.writeBuffer(buf, 0, data as any);
   return { buf, count: data.length / 11 };
 }
 
