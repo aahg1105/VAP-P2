@@ -48,7 +48,7 @@ export class objectGUI{
                     {binding: 2, resource: this.texture.createView()},],
         });
 
-        this.device.queue.writeBuffer(this.vertexBuffer,0,data);
+        this.device.queue.writeBuffer(this.vertexBuffer,0,data as any);
     }
 
     update(sampler: GPUSampler, texture: GPUTexture, pipeline: GPURenderPipeline){
