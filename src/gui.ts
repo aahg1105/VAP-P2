@@ -189,7 +189,7 @@ export function initGUI(onShapeChange: (shape: "cube" | "sphere") => void) {
     const el    = document.getElementById(id) as HTMLInputElement;
     const valEl = document.getElementById(`${id}-val`)!;
     el.addEventListener("input", () => {
-      (gui as Record<string, number>)[id] = parseFloat(el.value);
+      (gui as any)[id] = parseFloat(el.value);
       valEl.textContent = el.value;
     });
   });
