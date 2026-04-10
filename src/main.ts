@@ -546,16 +546,16 @@ async function load(url: string) {
 window.addEventListener('textureLoaded', async (e: any) => {
   const address = e.detail;
 
-  const fullname = "./textures/" + address;
+  console.log(address);
 
-  console.log(fullname);
+  let fullname = address;
 
   texture = await loadTextureOrCheckerboard(fullname);
 });
 
 window.addEventListener('modelLoaded', (e: any) => {
   const objText = e.detail;
-  console.log(e);
+  console.log(objText);
   const data = parseOBJ(objText);
 
   const objModel = new objectGUI(device,data,modelName,pipeline,sampler,texture);
@@ -575,6 +575,7 @@ window.addEventListener('deleteObject', (e:any) => {
     add_object();
 
     console.log("deleted");
+    set_arcball_state(globalQuaternion);
   }
 });
 
