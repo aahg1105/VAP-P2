@@ -546,7 +546,7 @@ async function load(url: string) {
 window.addEventListener('textureLoaded', async (e: any) => {
   const address = e.detail;
 
-  const fullname = "textures/" + address;
+  const fullname = "./textures/" + address;
 
   console.log(fullname);
 
